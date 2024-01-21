@@ -1,7 +1,8 @@
 import {createStore} from 'redux';
 
 const initState = {
-    value:0
+    value:0,
+    change:false,
 }
 
 function Reducer(prevState = initState, action) {
@@ -15,6 +16,11 @@ function Reducer(prevState = initState, action) {
             return {
                 ...prevState,
                 value: prevState.value - 1
+            }
+        case 'change-background':
+            return {
+                ...prevState,
+                change: action.payload
             }
         default:
             return prevState
