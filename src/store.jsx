@@ -1,5 +1,5 @@
 import {createStore,applyMiddleware} from 'redux';
-import testMiddleware from './middleware/testMiddleware';
+import logger from 'redux-logger'
 
 
 const initState = {
@@ -29,6 +29,6 @@ function Reducer(prevState = initState, action) {
     }
 }
 
-const store = createStore(Reducer,applyMiddleware(testMiddleware));
+const store = createStore(Reducer,applyMiddleware(logger));
 
 export default store
