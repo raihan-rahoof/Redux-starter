@@ -1,4 +1,6 @@
-import {createStore} from 'redux';
+import {createStore,applyMiddleware} from 'redux';
+import testMiddleware from './middleware/testMiddleware';
+
 
 const initState = {
     value:0,
@@ -27,6 +29,6 @@ function Reducer(prevState = initState, action) {
     }
 }
 
-const store = createStore(Reducer);
+const store = createStore(Reducer,applyMiddleware(testMiddleware));
 
 export default store
