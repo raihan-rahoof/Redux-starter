@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
-import Header from './components/Header/Header';
-import Productlist from './components/Productlist/Productlist';
+import AddTodo from './components/AddTodo';
+
 
 
 function App() {
@@ -8,8 +8,8 @@ function App() {
 
   return (
     <Fragment>
-      <Header/>
-      <Productlist/>
+     <AddTodo/>
+     
     </Fragment>
   );
 }
