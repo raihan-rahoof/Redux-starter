@@ -2,6 +2,7 @@ import React , {useState} from 'react'
 import {useDispatch } from 'react-redux'
 import { addTodo } from '../features/todo/todoSlice'
 import Todos from './Todos';
+import Swal from 'sweetalert2';
 
 function AddTodo() {
 
@@ -11,6 +12,17 @@ function AddTodo() {
 
     const addTodoHandler = (e) =>{
         e.preventDefault()
+
+        if (input.trim() === '') {
+          
+          Swal.fire({
+            title: 'Input Error',
+            text: 'Please enter a task before adding.',
+            icon: 'error',
+            confirmButtonText: 'OK',
+          });
+          return; 
+        }
         
         dispatch(addTodo(input))
         setInput('')
